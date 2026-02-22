@@ -2,9 +2,10 @@ const express = require("express");
 const http = require("http");
 const ngrok = require("@ngrok/ngrok");
 require("dotenv").config();
+const path = require("path");
 
 const { default: MCPClient } = require(
-  "/Users/alexandru.timis/AgentsToolkitProjects/mcp+client/mcp-client-typescript/build/index.js"
+  path.resolve(__dirname, "../server&client/mcp-client/build/index.js")
 );
 
 const app = express();
@@ -16,7 +17,7 @@ async function initMCP() {
   try {
     mcpClient = new MCPClient();
     await mcpClient.connectToServer(
-      "/Users/alexandru.timis/AgentsToolkitProjects/mcp+client/weather-server-typescript/build/index.js"
+      path.resolve(__dirname, "../server&client/mcp-server/build/index.js")
     );
     console.log("✅ [PROXY] MCP client ready\n");
   } catch (err) {

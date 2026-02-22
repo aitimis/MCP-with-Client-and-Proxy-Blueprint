@@ -1,4 +1,4 @@
-# AgentsToolkit — Local Setup Guide
+## Local Setup Guide
 
 ## Prerequisites
 - [Node.js v18+](https://nodejs.org)
